@@ -8,6 +8,7 @@ const RocketList = () => {
     graphql`
       query RocketListQuery {
         rockets {
+          id
           ...Rocket_rocket
         }
       }

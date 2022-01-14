@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<e73edba3807023f4fa9da7ff037e9a47>>
+ * @generated SignedSource<<981af6295ecef445de5575ad02e4df35>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -14,6 +14,7 @@ export type RocketListQuery$variables = {};
 export type RocketListQueryVariables = RocketListQuery$variables;
 export type RocketListQuery$data = {
   readonly rockets: ReadonlyArray<{
+    readonly id: string | null;
     readonly " $fragmentSpreads": FragmentRefs<"Rocket_rocket">;
   } | null> | null;
 };
@@ -23,7 +24,15 @@ export type RocketListQuery = {
   response: RocketListQuery$data;
 };
 
-const node: ConcreteRequest = {
+const node: ConcreteRequest = (function(){
+var v0 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "id",
+  "storageKey": null
+};
+return {
   "fragment": {
     "argumentDefinitions": [],
     "kind": "Fragment",
@@ -38,6 +47,7 @@ const node: ConcreteRequest = {
         "name": "rockets",
         "plural": true,
         "selections": [
+          (v0/*: any*/),
           {
             "args": null,
             "kind": "FragmentSpread",
@@ -64,18 +74,12 @@ const node: ConcreteRequest = {
         "name": "rockets",
         "plural": true,
         "selections": [
+          (v0/*: any*/),
           {
             "alias": null,
             "args": null,
             "kind": "ScalarField",
             "name": "name",
-            "storageKey": null
-          },
-          {
-            "alias": null,
-            "args": null,
-            "kind": "ScalarField",
-            "name": "id",
             "storageKey": null
           }
         ],
@@ -84,15 +88,16 @@ const node: ConcreteRequest = {
     ]
   },
   "params": {
-    "cacheID": "97a4d623af0b958652efa71de8bdd7a9",
+    "cacheID": "53334e5ecf58d882fb1db6d523fb1cdc",
     "id": null,
     "metadata": {},
     "name": "RocketListQuery",
     "operationKind": "query",
-    "text": "query RocketListQuery {\n  rockets {\n    ...Rocket_rocket\n    id\n  }\n}\n\nfragment Rocket_rocket on Rocket {\n  name\n}\n"
+    "text": "query RocketListQuery {\n  rockets {\n    id\n    ...Rocket_rocket\n  }\n}\n\nfragment Rocket_rocket on Rocket {\n  name\n}\n"
   }
 };
+})();
 
-(node as any).hash = "77fa272e89bf404cbb4fdd19837546a7";
+(node as any).hash = "6eb3961c8f1aa771f92b35fd4b68d93e";
 
 export default node;
