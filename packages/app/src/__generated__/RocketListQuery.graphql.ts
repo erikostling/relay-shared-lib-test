@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<72939220c9f23619d04c190efde52b66>>
+ * @generated SignedSource<<e73edba3807023f4fa9da7ff037e9a47>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -14,8 +14,6 @@ export type RocketListQuery$variables = {};
 export type RocketListQueryVariables = RocketListQuery$variables;
 export type RocketListQuery$data = {
   readonly rockets: ReadonlyArray<{
-    readonly id: string | null;
-    readonly name: string | null;
     readonly " $fragmentSpreads": FragmentRefs<"Rocket_rocket">;
   } | null> | null;
 };
@@ -25,22 +23,7 @@ export type RocketListQuery = {
   response: RocketListQuery$data;
 };
 
-const node: ConcreteRequest = (function(){
-var v0 = {
-  "alias": null,
-  "args": null,
-  "kind": "ScalarField",
-  "name": "id",
-  "storageKey": null
-},
-v1 = {
-  "alias": null,
-  "args": null,
-  "kind": "ScalarField",
-  "name": "name",
-  "storageKey": null
-};
-return {
+const node: ConcreteRequest = {
   "fragment": {
     "argumentDefinitions": [],
     "kind": "Fragment",
@@ -59,9 +42,7 @@ return {
             "args": null,
             "kind": "FragmentSpread",
             "name": "Rocket_rocket"
-          },
-          (v0/*: any*/),
-          (v1/*: any*/)
+          }
         ],
         "storageKey": null
       }
@@ -83,24 +64,35 @@ return {
         "name": "rockets",
         "plural": true,
         "selections": [
-          (v1/*: any*/),
-          (v0/*: any*/)
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "name",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "id",
+            "storageKey": null
+          }
         ],
         "storageKey": null
       }
     ]
   },
   "params": {
-    "cacheID": "93884b032bb8eb3451c6f8e3985ade42",
+    "cacheID": "97a4d623af0b958652efa71de8bdd7a9",
     "id": null,
     "metadata": {},
     "name": "RocketListQuery",
     "operationKind": "query",
-    "text": "query RocketListQuery {\n  rockets {\n    ...Rocket_rocket\n    id\n    name\n  }\n}\n\nfragment Rocket_rocket on Rocket {\n  name\n}\n"
+    "text": "query RocketListQuery {\n  rockets {\n    ...Rocket_rocket\n    id\n  }\n}\n\nfragment Rocket_rocket on Rocket {\n  name\n}\n"
   }
 };
-})();
 
-(node as any).hash = "fe0e9f761ab3cc390a6b196b8286724a";
+(node as any).hash = "77fa272e89bf404cbb4fdd19837546a7";
 
 export default node;

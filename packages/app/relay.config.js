@@ -1,14 +1,14 @@
 module.exports = {
-  root: '../../',
+  root: '../',
   sources: {
-    'apps/core/src': 'main',
-    'packages/relay/src': 'main',
+    'app/src': 'main',
+    'relay/src': 'main',
   },
   projects: {
     main: {
-      schema: 'apps/core/schema.graphql',
+      schema: 'app/schema.graphql',
       language: 'typescript',
-      output: 'apps/core/src/__generated__',
+      output: 'app/src/__generated__',
     },
   }, 
 }
