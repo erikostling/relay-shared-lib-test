@@ -3,7 +3,9 @@
 	"version": "1.0.0",
 	"main": "dist/index.js",
 	"scripts": {
-		"build": "webpack --config=webpack.config.js"
+		"build": "webpack --config=webpack.config.js",
+		"graphql:get-schema": "get-graphql-schema https://api.spacex.land/graphql/ > src/schema.graphql",
+    "graphql:compile-relay": "relay-compiler --watch"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.12.10",
